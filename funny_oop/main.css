@@ -1,0 +1,55 @@
+body
+{
+    margin:0;
+    font-family: sans-serif; 
+    /* без засечек */
+}
+.wrapper {
+    max-width: 1200px;
+    margin: auto;
+    padding: 30px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    /* 4 карточки в ряд  */
+    gap: 30px;
+    /* расстояние между ними */
+}
+h2,p 
+{
+    margin: 0;
+    /* чтобы были вприлипочку */
+}
+.card {
+    display: grid;
+    gap: 10px;
+    /* расстояние между элементами */
+    box-shadow: 0 0 5px 0 #000;
+    /* тень от карточки */
+    padding: 20px;
+    /* внутренний отступ со всех сторон */
+    border-radius: 8px;
+    /* скругленная рамка */
+    text-align: center;
+    /* весь контент по центру */
+    grid-template-rows: 30px 60px 30px;
+    /* все карточки одинакового размера и все личики на одном уровне */
+    align-items: center;
+    /* контент будет отн-но друг друга по центру */
+}
+.card i {
+    /* тег 'i' внутри карточки */
+     font-size: 3rem; 
+    /* картинка внутри карточки на 30 % больше */
+}
+.text {
+    /* - класс у тега 'p' внутри карточки */
+    text-align: left;
+    align-self: flex-start;
+    /* расположение текста по левому краю */
+}
+
+ /* если бы у тега 'p' не было класса 'text' - можно было бы обратиться 
+ к последнему тегу 'p' внутри класса 'card': ".card p:last-child"  */
+
+
+    

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="main.css">
+</head>
+
+<header>Акция!</header>
+
+<body>
+    <div class="container">
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+    </div>
+
+    <footer></footer>
+
+</body>
+
+    <script>
+
+let items = document.querySelectorAll(".item");
+ 
+let index = 0;
+setInterval(function() {
+  items[index].classList.add("active");
+  for (let i = 0; i < items.length; i++) {
+    if (i !== index) {
+      items[i].classList.contains("active") &&
+        items[i].classList.remove("active");
+    }
+  }
+
+  function getNumber(min, max) {
+  return Math.floor(Math.random() * (max - min) + min);
+}
+
+function getColor(r, g, b) {
+  let red = getNumber(...r);
+  let green = getNumber(...g);
+  let blue = getNumber(...b);
+  return `rgb(${red},${green},${blue})`;
+}
+
+function setGradient(colors, angle = 120) {
+  return `linear-gradient(${angle}deg, ${colors})`;
+}
+
+let colorStart = getColor([100,200], [50,200], [200, 256]);
+let colorEnd = getColor([100,150], [50,100], [200, 256]);
+items[index].style.backgroundImage = setGradient([colorStart, colorEnd]);
+
+let header = document.querySelector("header");
+let footer = document.querySelector("footer");
+footer.innerText = new Date().toLocaleDateString()
+items[0].parentElement.style.height = window.innerHeight - (header.offsetHeight + footer.offsetHeight) + "px";
+
+  index++;
+  if (index === items.length) {
+    index = 0;
+  }
+}, 2000);
+
+
+
+
+    </script>
+
+</body>
+</html>

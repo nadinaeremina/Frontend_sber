@@ -1,0 +1,67 @@
+.mycode {
+    height: 100vh;
+    /* градиент по диагонали из двух цветов, по умолчанию - 50% на 50%, в данном случае второго больше */
+    background-image: linear-gradient(to left bottom, rgba(255, 127, 80, 0.692),
+    rgba(192, 192, 192, 0.696) 90%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card {
+    background-color: blueviolet;
+    width: 85.6mm;
+    height: 53.98mm;
+    border-radius: 3.18mm;
+    color: #fff;
+    padding: 6mm;
+    /* чтобы width, height - включали в себя padding */
+    /* width = content + border + padding */
+    box-sizing: border-box;
+    /* включает в себя width исключительно без контента */
+    /* box-sizing: content-box; */
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 6mm;
+    grid-template-rows: repeat(3, 1fr);
+}
+
+select, input {
+    outline: none;
+    background-color: transparent;
+    border: 1px solid;
+    color: inherit;
+    width: 100%;
+    padding-left: 3px;
+    box-sizing: border-box;
+}
+
+/* placeholder-это псевдокласс */
+::placeholder {
+    color: coral;
+}
+
+/* в классе 'card' для элементов с атрибутом type='number' */
+.card>[type="number"] {
+grid-row-start: 2;
+}
+
+select {
+    /* будет растянут на 2 столбца */
+    grid-column-end: span 2;
+}
+
+[type="text"] {
+    grid-row-start: 3;
+    /* растянется на 2 столбца */
+    grid-column-end: span 2;
+}
+
+.card__date {
+    grid-row-start: 3;
+    display: flex;
+    align-items: center;
+    grid-column-end: span 2;
+    /* работает для сеток и для флексов */
+    gap: 6px;
+}

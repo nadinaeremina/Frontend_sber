@@ -1,0 +1,42 @@
+body {
+    margin: 0;
+    /* если хотим, чтобы контент размещался в центре */
+    /* должен быть класс 'flexible' */
+    height: 100vh;
+    font-family: sans-serif;
+}
+
+.flexible {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* если не хотим думать о padding и border */
+    /* box-sizing: border-box; */
+}
+
+a {
+    color: inherit;
+    /* цвет ссылки */
+    text-decoration: none;
+}
+
+.square {
+    width: 300px;
+    height: 300px;
+    /* сверху вниз по диагонали (первая - сдвиг вправо,
+    вторая - сдвиг вниз, третья - размытие тени, четвертая 
+    - охват тени, пятая - цвет тени) */
+    box-shadow: 3px 5px 15px 0 #000;
+    flex-direction: column;
+    /* отступ м/у ссылкой и текстом */
+    gap: 10px;
+    /* не будет меняться текст, когда несколько раз кликнем */
+    user-select: none;
+}
+
+.btn {
+    padding: 10px;
+    background-color: blanchedalmond;
+    border-radius: 4px;
+}
+

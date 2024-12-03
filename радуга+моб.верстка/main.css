@@ -1,0 +1,118 @@
+body {
+    margin: 0;
+    font-family: sans-serif;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+h1 {
+    margin: 0;
+}
+
+header {
+    height: 100px;
+    background-color: #222;
+    color: #fff;
+    display: flex;
+    justify-content: space-between; 
+    align-items: center;
+}
+
+.banner {
+    height: 80vh;
+    background: url(img/im.jpg) no-repeat center / cover; 
+    display: flex;
+    justify-content: center; 
+    /* двигает блок */
+    align-items: center; 
+    color: #fff;
+    font-size: 3rem;
+    /* двигает текст отн-но блока */
+    text-align: center; 
+    position: relative;
+}
+
+.banner::before {
+    /* контент прописывать всегда обязательно */
+    content: "";
+    background-color: #0006;
+    width: 100%;
+    height: 100%;
+    /* если псевдоэлемент сделан не для блочного тега - не забываем добавить 'display: block' */
+    position: absolute;
+}
+
+.banner h1 {
+    /* тк h1 - братский эл-т, выдвигаем его на передний план с помощью индекса */
+    position: relative;
+    z-index: 2;
+}
+
+.info__card {
+    /* цвет бордюра всегда должен быть равен цвету текста */
+    border: 1px solid;
+    color: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    display: flex;
+    gap: 20px;
+}
+
+.info {
+    background-color: darkcyan;
+    padding: 50px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 50px;
+}
+
+.info__card i {
+    font-size: 4em;
+}
+
+.container {
+    /* padding-left: calc(100% - 1200px)/2; */
+    padding-left: calc(50% - 600px);
+    padding-right: calc(50% - 600px);
+}
+
+/* верстка для планшета */
+@media (min-width: 600px) and (max-width: 1199px) {
+    .container {
+        padding: 50px;
+    }
+    header {
+        /* как будто высоту и не задавали */
+        height: auto;
+    }
+    .info {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 599px) {
+    .container {
+        padding: 10px;
+    }
+    header {
+        /* как будто высоту и не задавали */
+        height: auto;
+        flex-direction: column;
+        gap: 10px;
+    }
+    .info {
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+    h1 {
+        font-size: 40px;
+    }
+    .banner {
+        height: 300px;
+    }
+}
+
+/* ::backdrop-filter */

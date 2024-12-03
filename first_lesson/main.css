@@ -1,0 +1,86 @@
+/* для всех тегов */
+* {
+    margin: 0;
+}
+
+header {
+    /* контент всегда будет по ширине 1200 px */
+    padding:  30px calc(50% - 500px);
+    display: flex;
+    /* контент по центру */
+    align-items: center;
+    /* равное расстояние, одинаково удалились (влево-вправо) */
+    justify-content: space-between;
+}
+
+.logo {
+   font-family: Impact, fantasy;
+   /* шрифт в 2 раза больше, чем по умолчанию */
+    font-size: 2rem;
+    display: flex;
+    align-items: center;
+    /* отступ между эл-ми в display:flex */
+    gap: 10px;
+}
+
+nav {
+    display: flex;
+    /* 'gap' - расстояние только внутри (между тегами), чтобы не задавать каждому */
+    gap: 20px;
+}
+
+.banner {
+/* фон */
+   background-image: url(img/shotlandskaya-shinshilla-variacii-okrasa-harakter-i-usloviya-soderzhaniya-koshek.jpg); 
+   /* все, что внутри баннера - белым цветом */
+   color: #fff;
+   /* контент всегда будет по ширине 1200 px */
+   padding: calc(50% - 500px);
+   background-position: center;
+   background-size: cover;
+   /* vh - высота экрана, 268 px - это верх и низ */
+   height: calc(100vh - 1468px);
+}
+
+.info {
+    /* контент всегда будет по ширине 1200 px */
+    padding: 30px calc(50% - 500px);
+    display: flex;
+    gap: 30px;
+}
+
+/* для всех ссылок - всегда */
+a {
+    text-decoration: none;
+    color: inherit;
+    /* тк ссылки находятся в теге 'body' - цвет у них будет такой же как цвет 'body' */
+}
+
+img {
+    /* либо 'height', либо 'width', ширина подставится авт-ки */
+    height: 50px;
+}
+
+h1 {
+    width: 500px;
+}
+
+.banner p {
+    width: 500px;
+}
+
+.card {
+    width: 25%;
+    display: flex;
+    align-items: end;
+    gap: 20px;
+    border: 1px solid;
+    /* % - если нужно сделать круг, а пиксели - когда нужно равномерно скруглить уголочки */
+    border-radius: 8px;
+    padding: 20px;
+}
+
+.card h4 {
+    /* чтобы текст от заголовка отделялся */
+    margin-bottom: 10px;
+}

@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Card</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            display: grid;
+            /* делим на 2 равные части (форма и карточки)*/
+            grid-template-columns: repeat(2, 1fr);
+            padding: 50px;
+            gap: 50px;
+        }
+
+        .card {
+            width: 200px;
+            height: 120px;
+            border-radius: 5px;
+            /* чтобы увидеть карточку */
+            box-shadow: 0 0 5px #000;
+            /* чтобы расположить теги внутри карточки */
+            display: grid;
+            grid-template-rows: repeat(3, 1fr);
+            gap: 10px;
+            padding: 20px;
+            /* чтобы 'padding' не увеличивал размеры карточки */
+            box-sizing: border-box;
+        }
+
+        .form {
+            display: grid;
+            /* расстояние между эл-ми с классом 'row' */
+            gap: 20px;
+            width: 300px;
+        }
+
+        .row {
+            display: grid;
+            /* чтобы было расстояние между 'input' и 'value' */
+            gap: 6px;
+        }
+
+        .img {
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: right;
+        }
+
+        .number {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+        }
+
+    </style>
+</head>
+<body>
+    <form action="">
+        <div class="row">
+            <label for="name">Имя пользователя</label>
+            <input type="text" id="name">
+        </div>
+        <div class="row">
+            <label for="number">Номер карты</label>
+            <input type="number" id="number">
+        </div>
+        <div class="row">
+            <label for="type">Платежная система</label>
+            <select id="type">
+                <option value="https://ttnvkz.ru/storage/app/media/logotype/visa.png">Visa</option>
+                <option value="https://pngimg.com/uploads/mastercard/mastercard_PNG23.png">Master Card</option>
+                <option value="https://knitcool.ru/uploads/images/mir.png">Мир</option>
+            </select>
+        </div>
+    </form>
+    <div class="wrapper">
+        <div class="card">
+            <div class="img"></div>
+            <div class="number"></div>
+            <div class="user"></div>
+        </div>
+    </div>
+    <script>
+        let fName = document.querySelector("#name");
+        let fType = document.querySelector("#type");
+        let fNumber = document.querySelector("#number");
+
+        let img = document.querySelector(".img");
+        let num = document.querySelector(".number");
+        let user = document.querySelector(".user");
+
+        // по умолчанию
+        img.style.backgroundImage = `url(${fType.value})`;
+        user.innerText = "Ivanov Ivan";
+
+        function setNumber (n) {
+            let html = "";
+            for (let index = 0; index < n.length; index++) {
+                    if (index === 0) {
+                        html += "<span>" + n[index];
+                        } else if (index % 4 === 0) {
+                            html += `</span><span>${n[index]}`;
+                        } else if (index === 15) {
+                            html += `${n[index]}</span>`;
+                        } else {
+                            html += n[index];
+                        }
+                    }
+            return html;
+        }
+        num.innerHTML = setNumber("0000000000000000");
+
+        // 'input' - когда вводим (в моменте)
+        fName.addEventListener("input", e => {
+            user.innerText = e.target.value;
+        })
+
+        // 'change' - когда ввели (по завершении)
+        fNumber.addEventListener("change", e => {
+            num.innerHTML = setNumber(e.target.value);
+        })
+
+        fType.addEventListener("change", e => {
+            img.style.backgroundImage = `url(${e.target.value})`;
+        })
+    </script>
+</body>
+
+<!-- wikimedia - категория 'images' -->
