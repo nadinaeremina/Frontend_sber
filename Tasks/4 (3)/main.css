@@ -1,0 +1,28 @@
+body {
+    background-color: #6f9e80;
+    margin: 0;
+    font-family: sans-serif;
+    margin: 10px;
+  } 
+
+.field{
+    display: flex;
+    justify-content: space-between;
+    width: 400px;
+    margin: 10px 0;
+}
+
+.btns{
+    display: flex;
+    justify-content: space-between;
+    width: 400px;
+}
+
+.btns button{
+    border: none;
+    background-color: #34495e;
+    color: #ecf0f1;
+    padding: 5px;
+    border-radius: 5px;
+}
+  

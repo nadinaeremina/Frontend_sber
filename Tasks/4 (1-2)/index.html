@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="main.css">
+
+    <!-- подключение шрифта 'Roboto' -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- 4.1 -->
+    <form oninput="city_out.value=city.value;">
+
+        <label>Выберите город доставки:</label>
+
+        <div class='fields'>
+            <p>Moscow</p>
+            <input value="msc" type="radio" name="city" checked>
+            <p>Piter</p>
+            <input value="spb" type="radio" name="city">
+        </div>
+
+        <!-- покажет 'value' выбранного 'input' -->
+        <p>Результат: <output name='city_out' for='city'></output></p>
+
+    <form>
+
+    <br>
+    <!-- input обернутый в label-для увеличения области кликания -->
+    <label><input type="checkbox">Показать пароль</label>
+
+    <br>
+    <br>
+
+    <!-- атрибут 'name' должен быть одинаковый для того, чтобы срабатывал переключатель -->
+    <label>Пол</label>
+    <label><input type="radio" name="gender">Мужской</label>
+    <label><input type="radio" name="gender">Женский</label>
+
+    <br>
+    <br>
+
+    <!-- 4.2 -->
+    <form>
+		<label>Подберите себе подходящий тип солнечной панели</label>
+		<select name="type">
+            <option value="mono">Монокристаллический</option>
+            <option value="poli" selected>Поликристаллический</option>
+            <option value="silicon">Кремниевые</option>
+		</select>
+	<form>
+        
+    </body>
+</html>

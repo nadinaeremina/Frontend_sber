@@ -1,0 +1,37 @@
+body {
+    background-color: #6f9e80;
+    margin: 0;
+    font-family: sans-serif;
+    margin: 10px;
+  } 
+
+.facts div{
+	padding: 10px;
+	background-color: #34495e;
+	color: #ecf0f1;
+	border-radius: 5px;
+	margin: 10px;
+}
+
+/* 4.8 */
+/* .facts{
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+} */
+
+/* 4.9 */
+.facts{
+    display: grid;
+    grid-template-columns: 300px 300px 300px;
+}
+
+.fact_4{
+    grid-column: span 3;
+}
+
+.fact_6{
+    grid-column: span 2;
+}
+
+
+  

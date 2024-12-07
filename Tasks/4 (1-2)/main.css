@@ -1,0 +1,19 @@
+body {
+    background-color: #6f9e80;
+    font-family: sans-serif;
+    margin: 10px;
+  } 
+
+.fields{
+    margin-top: 10px;
+}
+
+p{
+    /* выстроить теги в одну полосу */
+    display: inline-block;
+}
+
+select{
+    margin-top: 20px;
+    display: block;
+}
